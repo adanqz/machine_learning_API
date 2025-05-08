@@ -1,6 +1,9 @@
+
+![Logo_compuesto_vof_2025](https://github.com/user-attachments/assets/df7db686-cfb0-4b47-a125-8cc28e402332)
+
 # 🌸 API de Predicción de la Flor de Iris
 
-Esta API utiliza algoritmos de machine learning para predecir el tipo de iris basándose en las características de sus pétalos y sépalos. 
+Esta API creada con Flask utiliza algoritmos de machine learning para predecir el tipo de iris basándose en las características de sus pétalos y sépalos. 
 
 ## 🛠️ Modelos Utilizados
 
@@ -11,7 +14,7 @@ Los siguientes modelos se han implementado:
 - **SVM**: `joblib.load("./models/model_svm.h5")`
 - **Árbol de Decisión**: `joblib.load("./models/model_tree.h5")`
 
-### 🌼 Clases de Iris
+## 🌼 Clases de Iris
 
 python
 clases_iris = {
@@ -20,18 +23,9 @@ clases_iris = {
     2: "virginica"
 }
 
-#🚀 Endpoints
+# 🚀 Endpoints
 
-##🏠 Home
-
-@app.route('/', methods=['GET'])
-def home():
-    return """
-    <h1>API de Predicción de la Flor de Iris</h1>
-    <p>Utiliza los endpoints para predecir la clase de una flor de iris basándote en sus características.</p>
-    """
-    
-##📊 Predicción con Regresión Logística
+## 📊 Predicción con Regresión Logística
 
 @app.route('/predict/logistic', methods=['POST'])
 def predict_logistic():
@@ -41,7 +35,7 @@ def predict_logistic():
     prediction, label = hacer_prediccion(modelos['logistic'], features)
     return jsonify({'modelo': 'Logistic Regression', 'prediccion': prediction, 'clase': label})
 
-##🌲 Predicción con Random Forest
+## 🌲 Predicción con Random Forest
 
 @app.route('/predict/randomforest', methods=['POST'])
 def predict_randomforest():
@@ -51,7 +45,7 @@ def predict_randomforest():
     prediction, label = hacer_prediccion(modelos['randomforest'], features)
     return jsonify({'modelo': 'Random Forest', 'prediccion': prediction, 'clase': label})
 
-##🧠 Predicción con SVM
+## 🧠 Predicción con SVM
 
 @app.route('/predict/svm', methods=['POST'])
 def predict_svm():
@@ -61,7 +55,7 @@ def predict_svm():
     prediction, label = hacer_prediccion(modelos['svm'], features)
     return jsonify({'modelo': 'SVM', 'prediccion': prediction, 'clase': label})
 
-##🌳 Predicción con Árbol de Decisión
+## 🌳 Predicción con Árbol de Decisión
 
 @app.route('/predict/tree_decision', methods=['POST'])
 def predict_tree():
