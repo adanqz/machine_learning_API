@@ -65,3 +65,7 @@ def predict_tree():
     prediction, label = hacer_prediccion(modelos['tree'], features)
     return jsonify({'modelo': 'Decision Tree', 'prediccion': prediction, 'clase': label})
   
+
+# 📬 Uso
+
+Puedes realizar peticiones POST a los endpoints especificados utilizando Postman para obtener la predicción del tipo de iris basado en las características que proporciones.
